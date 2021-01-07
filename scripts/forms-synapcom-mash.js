@@ -10,16 +10,16 @@ $(document).ready(function() {
         }
     });
 
-    $('#contact_lastname').on('focusout', function() {
-        var input = $(this);
-        var test = input.val();
-        if(test){
-            input.removeClass('invalid').addClass('valid');
-        }
-        else{
-            input.removeClass('valid').addClass('invalid');
-        }
-    });
+    // $('#contact_lastname').on('focusout', function() {
+    //     var input = $(this);
+    //     var test = input.val();
+    //     if(test){
+    //         input.removeClass('invalid').addClass('valid');
+    //     }
+    //     else{
+    //         input.removeClass('valid').addClass('invalid');
+    //     }
+    // });
 
     $('#contact_email').on('focusout', function() {
         var input=$(this);
@@ -81,10 +81,10 @@ $(document).ready(function() {
             alert('Por favor, insira seu nome.')
             return
         }
-        if($('#contact_lastname').hasClass('invalid')){
-            alert('Por favor, insira seu sobrenome.')
-            return
-        }
+        // if($('#contact_lastname').hasClass('invalid')){
+        //     alert('Por favor, insira seu sobrenome.')
+        //     return
+        // }
         if($('#contact_email').hasClass('invalid')){
             alert('Por favor, insira um email válido.')
             return
@@ -141,6 +141,7 @@ $(document).ready(function() {
                 $('input').each(function() {
                     if($(this).is(':text')) {
                         $(this).val('')
+                        $(this).removeClass("valid").addClass("invalid")
                     }
                 })
             },
